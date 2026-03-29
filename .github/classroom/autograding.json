@@ -1,0 +1,36 @@
+{
+  "tests": [
+    {
+      "name": "1) source /opt/ros/jazzy/setup.bash",
+      "setup": "pip install -q pytest setuptools wheel PyYAML lark pydocstyle",
+      "run": "pytest -q tests/test_main.py::test_source_ros_env_ok",
+      "timeout": 120,
+      "points": 1
+    },
+    {
+      "name": "2) ros2 pkg create 명령 문자열",
+      "run": "pytest -q tests/test_main.py::test_pkg_create_cmd",
+      "timeout": 120,
+      "points": 1
+    },
+    {
+      "name": "3) colcon build 명령 문자열",
+      "run": "pytest -q tests/test_main.py::test_colcon_build_cmd",
+      "timeout": 120,
+      "points": 1
+    },
+    {
+      "name": "4) xhost +local:root 명령 문자열",
+      "run": "pytest -q tests/test_main.py::test_xhost_cmd",
+      "timeout": 120,
+      "points": 1
+    },
+    {
+      "name": "5) docker run 문자열",
+      "run": "pytest -q tests/test_main.py::test_docker_run_cmd",
+      "timeout": 120,
+      "points": 1
+    }
+  ],
+  "version": 1
+}
